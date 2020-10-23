@@ -1,0 +1,34 @@
+[09-Jun-2020 10:56:58 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222977 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:27:38 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:28:33 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222849 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:28:45 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:29:24 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:29:57 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:31:44 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:34:40 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:39:08 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:40:21 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:50:50 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:56:54 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 11:57:39 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 12:20:00 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 12:24:01 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 12:40:54 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 13:14:46 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 13:53:01 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222169 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 13:58:21 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[09-Jun-2020 14:03:48 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[10-Jun-2020 11:18:58 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[12-Jun-2020 10:27:17 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[12-Jun-2020 10:34:53 Asia/Colombo] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 222969 bytes) in /home/oviklo/wms.oviklo.lk/protected/vendor/mpdf/mpdf.php on line 11586
+[22-Jul-2020 12:34:10 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[07-Sep-2020 20:49:45 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[07-Sep-2020 20:50:05 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[07-Sep-2020 20:50:30 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[07-Sep-2020 21:06:18 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[14-Sep-2020 08:55:39 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[14-Sep-2020 08:56:04 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[23-Sep-2020 12:15:03 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[28-Sep-2020 22:27:49 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[13-Oct-2020 20:13:29 Asia/Colombo] PHP Fatal error:  Call to undefined method stdClass::save() in /home/oviklo/wms.oviklo.lk/protected/controllers/PickController.php on line 131
+[20-Oct-2020 09:14:34 Asia/Colombo] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 31932555 bytes) in /home/oviklo/yii/framework/web/widgets/COutputProcessor.php on line 43
