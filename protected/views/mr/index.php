@@ -129,6 +129,29 @@
         search();
     });
 
+    
+    $(document).on("click","#btn-submit-search",function(){
+        $("#filters-add").addClass("btn-success");
+        search();
+    });
+
+    function search() {
+        $.fn.yiiListView.update('Mr-list', {
+            data: {
+                val: $("#Mr-search").val(),
+                pages: $("#Mr-pages").val(),
+                customers_id: $("#search_customers_id").val(),
+                warehouse_id: $("#search_warehouse_id").val(),
+                project_id: $("#search_project_id").val(),
+                date_from: $("#search_datefrom").val(),
+                date_to: $("#search_dateto").val(),
+                vehicle_no: $("#search_vehicle_no").val(),
+                packinglist_no: $("#search_packinglist_no").val(),  
+                ref_no: $("#search_ref_no").val()   
+            }
+        });
+    }
+    /*
     function search() {
         $.fn.yiiListView.update('Mr-list', {
             data: {
@@ -139,21 +162,32 @@
                 //CODE GOES HERE
             }
         });
-    }
+    }*/
 
     $(document).on("change", "#customers_id", function (e) {
-        loadProjects($(this).val());
+        loadProjects($(this).val(),"#project_id");
+    });
+    
+    $(document).on("change", "#search_customers_id", function (e) {
+        loadProjects($(this).val(),"#search_project_id");
+    });
+    
+    $(document).on("click","#btn-clear-search",function(e){
+       $("#filters-add").removeClass("btn-success");
+       $("#filter-form").resetForm(); 
+       search();
     });
 
-    function loadProjects(cus_id) {
+    function loadProjects(cus_id,target) {
         $.ajax({
             url: "<?php echo Yii::app()->createUrl('project/loadlist') ?>/" + cus_id,
             type: "POST",
             error: showResponse,
         }).done(function (data) {
-            $("#project_id").html(data);
+            $(target).html(data);
         });
     }
+
 
 
 </script>
@@ -311,6 +345,101 @@
 </div>
 <!-- Submit Form BY model -->
 
+<!-- Submit Form BY model -->
+<div class="modal fade" id="modal-filters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Advanced Search</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="#" method="post" id="filter-form">
+
+                <div class="cus-form">
+                    
+                        <div class="form-row mb-2">
+                            <label for="code" class="col-sm-4 control-label">Customer</label>
+                            <div class="col-sm-6">
+                                <select id="search_customers_id" class="custom-select  custom-select-sm"> 
+                                    <option value="">Select Customer</option>
+                                    <?php
+                                    $users_id = Yii::app()->user->getId();
+                                    $list = UserHasCustomers::model()->findAllByAttributes(array("users_id" => $users_id, "online" => 1));
+                                    foreach ($list as $value) {
+                                        echo "<option value='" . $value->customers->id . "'>" . $value->customers->code . " - " . $value->customers->name . "</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>  
+                        
+                        <div class="form-row mb-2">
+                            <label for="code" class="col-sm-4 control-label">Warehouse</label>
+                            <div class="col-sm-6">
+                                <select id="search_warehouse_id"  class="custom-select  custom-select-sm">
+                                    <option value="">Select Warehouse</option>
+                                    <?php
+                                    $users_id = Yii::app()->user->getId();
+                                    $list = UserHasWarehouse::model()->findAllByAttributes(array("users_id" => $users_id, "online" => 1));
+                                    foreach ($list as $value) {
+                                        echo "<option value='" . $value->warehouse->id . "'>" . $value->warehouse->code . " - " . $value->warehouse->name . "</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row mb-2">
+                            <label for="project_id" class="col-sm-4 control-label">Project</label>
+                            <div class="col-sm-6">
+                                <select id="search_project_id" name="search_project_id" class="custom-select  custom-select-sm"></select>
+                            </div>
+                        </div>
+                        <div class="form-row mb-2">
+                            <label for="eff_date" class="col-sm-4 control-label">Date</label>
+                            <div class="col-sm-4">
+                                <label>From</label>
+                                <input type="text" data-date-container="#modal-filters" class="form-control  form-control-sm datepicker" id="search_datefrom" name="eff_date" placeholder="Date">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>To</label>
+                                <input type="text" data-date-container="#modal-filters" class="form-control   form-control-sm datepicker" id="search_dateto" name="eff_date" placeholder="Date">
+                            </div>
+                        </div>
+                        <div class="form-row mb-2">
+                            <label for="vehicle_no" class="col-sm-4 control-label">Vehicle No#</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control  form-control-sm" id="search_vehicle_no" name="vehicle_no" placeholder="Vehicle No#">
+                            </div>
+                        </div>
+                        <div class="form-row mb-2">
+                            <label for="packinglist_no" class="col-sm-4 control-label">Packing List No#</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control  form-control-sm" id="search_packinglist_no" name="packinglist_no" placeholder="Packing List No#">
+                            </div>
+                        </div>
+                        <div class="form-row mb-2">
+                            <label for="ref_no" class="col-sm-4 control-label">Ref No#</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control  form-control-sm" id="search_ref_no" name="ref_no" placeholder="Referance No#">
+                            </div>
+                        </div> 
+
+                </div>
+                    
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn-clear-search" type="button" class="btn btn-danger btn-sm">Clear Filters</button>
+                <button id="btn-submit-search" type="button" class="btn btn-success btn-sm">Search <span class="oi oi-magnifying-glass"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Submit Form BY model -->
+
+
 <div id="title-nav" class="inputsearch">
     <div class="row justify-content-between">
 
@@ -322,6 +451,9 @@
                     </button>
                 </div>
                 <input type="text" id="Mr-search" class="form-control form-control-sm" placeholder="Search by Name/Code etc.">
+                <div class="input-group-append">
+                    <button id="filters-add" data-toggle="modal" data-target="#modal-filters" class="btn btn-default btn-sm" >Filters <span class="oi oi-list"></span> <span class="glyphicon glyphicon-search"></span></button>
+                </div>
                 <div class="input-group-append">
                     <button id="Mr-searchbtn" class="btn btn-secondary btn-sm" >Search <span class="oi oi-magnifying-glass"></span> <span class="glyphicon glyphicon-search"></span></button>
                 </div>

@@ -203,6 +203,54 @@ class MrController extends Controller {
             $searchtxt = " AND code LIKE '%" . $_GET['val'] . "%' ";
         }
 
+        if (empty($_GET['customers_id'])) {
+            $customers = "";
+        } else {
+            $customers = " AND customers_id = '" . $_GET['customers_id'] . "' ";
+        }
+
+        if (empty($_GET['warehouse_id'])) {
+            $warehouse = "";
+        } else {
+            $warehouse = " AND warehouse_id = '" . $_GET['warehouse_id'] . "' ";
+        }
+
+        if (empty($_GET['project_id'])) {
+            $project = "";
+        } else {
+            $project = " AND project_id = '" . $_GET['project_id'] . "' ";
+        }
+
+        if (empty($_GET['date_from'])) {
+            $date_from = "";
+        } else {
+            $date_from = " AND eff_date >= '" . $_GET['date_from'] . "' ";
+        }
+
+        if (empty($_GET['date_to'])) {
+            $date_to = "";
+        } else {
+            $date_to = " AND eff_date <= '" . $_GET['date_to'] . "' ";
+        }
+
+
+        if (empty($_GET['vehicle_no'])) {
+            $vehicle_no = "";
+        } else {
+            $vehicle_no = " AND vehicle_no LIKE '%" . $_GET['vehicle_no'] . "%' ";
+        }
+        if (empty($_GET['packinglist_no'])) {
+            $packinglist_no = "";
+        } else {
+            $packinglist_no = " AND packinglist_no LIKE '%" . $_GET['packinglist_no'] . "%' ";
+        }
+
+        if (empty($_GET['ref_no'])) {
+            $ref_no = "";
+        } else {
+            $ref_no = " AND ref_no LIKE '%" . $_GET['ref_no'] . "%' ";
+        }
+
         if (empty($_GET['pages'])) {
             $pages = 50;
         } else {
@@ -212,7 +260,11 @@ class MrController extends Controller {
         $user_id = Yii::app()->user->getState("userid");
         $cus_keys = $this->returnCustomerList();
         $wh_keys = $this->returnWarehouseList();        
-        $sql = "SELECT * FROM mr WHERE IF(online = 1, users_id = '$user_id', users_id != 0) AND online >= 1 AND customers_id IN ($cus_keys) AND warehouse_id IN ($wh_keys) $searchtxt ORDER BY id DESC ";
+        $sql = "SELECT * FROM mr WHERE IF(online = 1, users_id = '$user_id', users_id != 0) AND online >= 1 AND "
+        . "customers_id IN ($cus_keys) AND "
+        . "warehouse_id IN ($wh_keys) "
+        . "$searchtxt $customers $warehouse $project $date_from $date_to $vehicle_no $packinglist_no $ref_no "
+        . "ORDER BY id DESC ";
         $count = Yii::app()->db->createCommand($sql)->query()->rowCount;
         $dataProvider = new CSqlDataProvider($sql, array(
             'totalItemCount' => $count,
